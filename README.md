@@ -1,16 +1,82 @@
-# React + Vite
+# 🏥 HealthConnect - Appointment Scheduler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, full-stack appointment scheduling system built with React, Vite, and Supabase.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 User authentication (email/password)
+- 👤 Patient registration
+- 📅 Appointment booking with date/time
+- 📋 Real-time appointment list with search/filter
+- ✏️ Edit and delete appointments
+- 🎨 Clean, responsive UI with pure CSS
+- 💾 PostgreSQL database via Supabase
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 18 + Vite
+- **Backend:** Supabase (Auth + Database)
+- **Database:** PostgreSQL
+- **Styling:** Pure CSS (no frameworks)
+- **Deployment:** Vercel
 
-## Expanding the ESLint configuration
+## 🚀 Local Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/appointment-scheduler.git
+cd appointment-scheduler
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env` file with Supabase credentials:
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+4. Run development server:
+```bash
+npm run dev
+```
+
+5. Open http://localhost:5173
+
+## 📊 Database Schema
+
+### Patients Table
+- `id` (uuid, primary key)
+- `name` (text)
+- `email` (text)
+- `phone` (text)
+- `created_at` (timestamp)
+
+### Appointments Table
+- `id` (uuid, primary key)
+- `patient_id` (uuid, foreign key)
+- `date` (date)
+- `time` (time)
+- `reason` (text)
+- `status` (text, default: 'Pending')
+- `created_at` (timestamp)
+
+## 🎨 Design Features
+
+- Gradient backgrounds
+- Smooth animations
+- Responsive grid layout
+- Status badges (Pending/Completed)
+- Modal dialogs for editing
+- Search and filter functionality
+
+## 📄 License
+
+MIT
+
+## 👨‍💻 Author
+
+Asry Ahamed
