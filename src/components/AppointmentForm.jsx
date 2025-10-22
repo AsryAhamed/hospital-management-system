@@ -92,9 +92,8 @@ export default function AppointmentForm({ patients, onSaved }) {
       {err ? <div className="error" style={{ display: 'block' }}>{err}</div> : null}
 
       <div className="actions">
-        <button className="btn" disabled={busy}>{busy ? 'Saving…' : 'Book Appointment'}</button>
-        <button type="button" className="btn ghost" onClick={clearAll}>Clear All Appointments</button>
-      </div>
+  <button className="btn" disabled={busy}>{busy ? 'Saving…' : 'Book Appointment'}</button>
+</div>
 
       <div className="hint">We’ll warn you if the same patient already has an appointment at that time.</div>
     </form>

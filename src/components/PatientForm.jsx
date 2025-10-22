@@ -54,9 +54,8 @@ export default function PatientForm({ onSaved }) {
       </div>
       {err ? <div className="error" style={{ display: 'block' }}>{err}</div> : null}
       <div className="actions">
-        <button className="btn" disabled={busy}>{busy ? 'Saving…' : 'Save Patient'}</button>
-        <button type="button" className="btn ghost" onClick={clearAll}>Clear All Patients</button>
-      </div>
+  <button className="btn" disabled={busy}>{busy ? 'Saving…' : 'Save Patient'}</button>
+</div>
       <div className="hint">Duplicate emails are blocked via database unique constraint.</div>
     </form>
   )
